@@ -1,10 +1,10 @@
-package com.gbtec.emailservertest.service.impl;
+package com.gbtec.emailserver.service.impl;
 
 import com.gbtec.openapi.model.Emails;
-import com.gbtec.emailservertest.exceptions.EmailExistsException;
+import com.gbtec.emailserver.exceptions.EmailExistsException;
 
-import com.gbtec.emailservertest.service.EmailService;
-import com.gbtec.emailservertest.service.UserFeignClient;
+import com.gbtec.emailserver.service.EmailService;
+import com.gbtec.emailserver.service.UserFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

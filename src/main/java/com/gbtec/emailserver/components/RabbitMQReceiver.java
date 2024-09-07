@@ -1,8 +1,8 @@
-package com.gbtec.emailservertest.components;
+package com.gbtec.emailserver.components;
 
 import org.springframework.stereotype.Component;
 
-import com.gbtec.emailservertest.service.MarkSpamService;
+import com.gbtec.emailserver.service.MarkSpamService;
 
 import lombok.extern.slf4j.Slf4j;
 

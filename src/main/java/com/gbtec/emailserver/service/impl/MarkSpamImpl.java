@@ -1,7 +1,7 @@
-package com.gbtec.emailservertest.service.impl;
+package com.gbtec.emailserver.service.impl;
 
-import com.gbtec.emailservertest.service.MarkSpamService;
-import com.gbtec.emailservertest.service.UserFeignClient;
+import com.gbtec.emailserver.service.MarkSpamService;
+import com.gbtec.emailserver.service.UserFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

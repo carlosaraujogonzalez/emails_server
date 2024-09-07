@@ -1,9 +1,9 @@
-package com.gbtec.emailservertest.service.impl;
+package com.gbtec.emailserver.service.impl;
 
 import com.gbtec.openapi.model.Email;
-import com.gbtec.emailservertest.exceptions.UpdateFailedException;
-import com.gbtec.emailservertest.service.EmailIdService;
-import com.gbtec.emailservertest.service.UserFeignClient;
+import com.gbtec.emailserver.exceptions.UpdateFailedException;
+import com.gbtec.emailserver.service.EmailIdService;
+import com.gbtec.emailserver.service.UserFeignClient;
 
 import lombok.extern.slf4j.Slf4j;
 

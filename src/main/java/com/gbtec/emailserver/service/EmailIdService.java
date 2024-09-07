@@ -1,4 +1,4 @@
-package com.gbtec.emailservertest.service;
+package com.gbtec.emailserver.service;
 
 import com.gbtec.openapi.model.Email;
 

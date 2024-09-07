@@ -1,6 +1,6 @@
-package com.gbtec.emailservertest.web;
+package com.gbtec.emailserver.web;
 
-import com.gbtec.emailservertest.service.EmailService;
+import com.gbtec.emailserver.service.EmailService;
 import com.gbtec.openapi.api.EmailsApi;
 import com.gbtec.openapi.model.Emails;
 import io.swagger.v3.oas.annotations.Parameter;

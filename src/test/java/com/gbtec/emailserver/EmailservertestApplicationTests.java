@@ -1,10 +1,10 @@
-package com.gbtec.emailservertest;
+package com.gbtec.emailserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmailservertestApplicationTests {
+class EmailserverApplicationTests {
 
 	@Test
 	void contextLoads() {

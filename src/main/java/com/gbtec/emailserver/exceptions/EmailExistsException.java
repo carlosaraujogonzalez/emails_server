@@ -1,4 +1,4 @@
-package com.gbtec.emailservertest.exceptions;
+package com.gbtec.emailserver.exceptions;
 
 public class EmailExistsException extends RuntimeException {
 	

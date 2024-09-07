@@ -1,4 +1,4 @@
-package com.gbtec.emailservertest.exceptions;
+package com.gbtec.emailserver.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

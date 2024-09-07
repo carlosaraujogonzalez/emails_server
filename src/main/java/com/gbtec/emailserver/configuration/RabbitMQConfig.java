@@ -1,4 +1,4 @@
-package com.gbtec.emailservertest.configuration;
+package com.gbtec.emailserver.configuration;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Binding;
