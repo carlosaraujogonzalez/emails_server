@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample API
+  description: A sample API to illustrate OpenAPI concepts
+
+servers:
+  - url: http://localhost:8080/v1
+
+tags:
+  - name: Emails
+  - name: EmailsId
+  - name: MarkSpam
+
+paths:
+  /emails:
+    post:
+      description: Add emails
+      operationId: addEmails
+      tags:
+        - Emails
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emails'
+      responses:
+        '204':
+          description: Successful operation
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+    get:
+      description: Get emails
+      operationId: getEmails
+      tags:
+        - Emails
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emails'
+    delete:
+      description: Delete emails
+      operationId: deleteEmails
+      tags:
+        - Emails
+      responses:
+        '200':
+          description: Successful response
+  /emails/{emailId}:
+    get:
+      description: Find email by Id
+      operationId: findEmailById
+      tags:
+        - EmailsId
+      parameters:
+        - name: emailId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Email'
+    put:
+      description: Update email by Id
+      operationId: updateEmailById
+      tags:
+        - EmailsId
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Email'
+      parameters:
+        - name: emailId
+          in: path
+          required: true
+          schema:
+            type: int
+            format: int32
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+    delete:
+      description: Delete email by Id
+      operationId: deleteEmailById
+      tags:
+        - EmailsId
+      parameters:
+        - name: emailId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Successful response
+
+components:
+  schemas:
+    Email:
+      type: object
+      properties:
+        emailId:
+          type: integer
+          format: int32
+        emailFrom:
+          type: string
+        emailTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailTo'
+        emailCC:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailCC'
+        emailBody:
+          type: string
+        state:
+          type: integer
+          format: int32
+    EmailTo:
+      type: object
+      properties:
+        email:
+          type: string
+    EmailCC:
+      type: object
+      properties:
+        email:
+          type: string
+    Emails:
+      type: object
+      properties:
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/Email'
+    ApiError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string

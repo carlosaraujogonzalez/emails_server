@@ -1,0 +1,48 @@
+email:
+  rabbitmq:
+    exchange: email.exchange
+    queue: email.queue
+    routingkey: email.routingkey
+
+emails:
+ db:
+   microservice:
+     path: http://localhost:8081
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+spring:
+  application:
+    name: emailserver
+
+  flyway:
+    enabled: true
+    locations=db/migration/emails:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  main:
+    allow-bean-definition-overriding: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  endpoints:
+    flyway:
+      web:
+        enabled: true
